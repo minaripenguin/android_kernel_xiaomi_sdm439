@@ -168,9 +168,9 @@ unsigned int sysctl_sched_capacity_margin_down = 1205; /* ~15% margin */
 
 #ifdef CONFIG_SCHED_WALT
 /* 1ms default for 20ms window size scaled to 1024 */
-unsigned int sysctl_sched_min_task_util_for_boost = 51;
+unsigned int sysctl_sched_min_task_util_for_boost = 36;
 /* 0.68ms default for 20ms window size scaled to 1024 */
-unsigned int sysctl_sched_min_task_util_for_colocation = 35;
+unsigned int sysctl_sched_min_task_util_for_colocation = 20;
 #endif
 static unsigned int __maybe_unused sched_small_task_threshold = 102;
 

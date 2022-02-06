@@ -6877,8 +6877,6 @@ int do_isolation_work_cpu_stop(void *data)
 	unsigned int cpu = smp_processor_id();
 	struct rq *rq = cpu_rq(cpu);
 
-	watchdog_disable(cpu);
-
 	irq_migrate_all_off_this_cpu();
 
 	local_irq_disable();
@@ -7026,6 +7024,7 @@ int sched_isolate_cpu(int cpu)
 	smp_call_function_any(&avail_cpus, hrtimer_quiesce_cpu, &cpu, 1);
 	smp_call_function_any(&avail_cpus, timer_quiesce_cpu, &cpu, 1);
 
+	watchdog_disable(cpu);
 	stop_cpus(cpumask_of(cpu), do_isolation_work_cpu_stop, 0);
 
 	calc_load_migrate(rq);

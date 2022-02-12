@@ -138,10 +138,10 @@ echo 65 > /proc/sys/kernel/sched_downmigrate
 echo 71 > /proc/sys/kernel/sched_upmigrate
 echo 65 > /proc/sys/kernel/sched_downmigrate
 echo 71 > /proc/sys/kernel/sched_upmigrate
-echo 71 > /proc/sys/kernel/sched_group_downmigrate
-echo 85 > /proc/sys/kernel/sched_group_upmigrate
-echo 71 > /proc/sys/kernel/sched_group_downmigrate
-echo 85 > /proc/sys/kernel/sched_group_upmigrate
+echo 85 > /proc/sys/kernel/sched_group_downmigrate
+echo 100 > /proc/sys/kernel/sched_group_upmigrate
+echo 85 > /proc/sys/kernel/sched_group_downmigrate
+echo 100 > /proc/sys/kernel/sched_group_upmigrate
 
 # Bring up all cores online
 echo 1 > /sys/devices/system/cpu/cpu1/online

@@ -579,12 +579,12 @@ static int msm_drm_init(struct device *dev, struct drm_driver *drv)
 	ddev->mode_config.funcs = &mode_config_funcs;
 
 	kthread_init_worker(&priv->clean_thread.worker);
-	priv->clean_thread.thread = kthread_run_perf_critical(cpu_lp_mask,
+	priv->clean_thread.thread = kthread_run_perf_critical(cpu_perf_mask,
 		kthread_worker_fn, &priv->clean_thread.worker, "drm_cleanup");
 	BUG_ON(IS_ERR(priv->clean_thread.thread));
 
 	kthread_init_worker(&priv->clean_thread.worker);
-	priv->clean_thread.thread = kthread_run_perf_critical(cpu_lp_mask,
+	priv->clean_thread.thread = kthread_run_perf_critical(cpu_perf_mask,
 		kthread_worker_fn, &priv->clean_thread.worker, "drm_cleanup");
 	BUG_ON(IS_ERR(priv->clean_thread.thread));
 

@@ -53,7 +53,7 @@ function configure_memory_parameters() {
 
     arch_type=`uname -m`
 
-    echo "4096,8192,15729,20972,31457,36700" > /sys/module/lowmemorykiller/parameters/minfree
+    echo "0,2096,8729,15972,24457,36700" > /sys/module/lowmemorykiller/parameters/minfree
 
     # Calculate vmpressure_file_min as below & set for 64 bit:
     # vmpressure_file_min = last_lmk_bin + (last_lmk_bin - last_but_one_lmk_bin)

@@ -682,6 +682,7 @@ static int msm_drm_init(struct device *dev, struct drm_driver *drv)
 			goto fail;
 		}
 	}
+	irq_set_perf_affinity(platform_get_irq(pdev, 0));
 
 	/**
 	 * Since pp interrupt is heavy weight, try to queue the work
